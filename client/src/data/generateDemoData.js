@@ -25,7 +25,7 @@ const seed = (n) => (Math.sin(n * 999) + 1) / 2;
 export const students = studentNames.map((name, index) => {
   const id = `STU${String(index + 1).padStart(3, '0')}`;
   const department = index % 3 === 0 ? 'Computer Science' : index % 3 === 1 ? 'Artificial Intelligence & Data Science' : 'Electronics & Communication';
-  return { id: `student-${index + 1}`, studentId: id, name, email: `${name.toLowerCase().replace(/[^a-z]+/g, '.')}@demo.attendai`, department, year: index % 2 ? 2 : 3, semester: index % 2 ? 4 : 6, section: ['A','B','C'][index % 3], avatar: name.split(' ').map((part) => part[0]).join('').slice(0,2), subjects: subjects.map((subject) => subject.id) };
+  return { id: `student-${index + 1}`, studentId: id, name, email: `student${String(index + 1).padStart(3, '0')}@demo.attendai`, department, year: index % 2 ? 2 : 3, semester: index % 2 ? 4 : 6, section: ['A','B','C'][index % 3], avatar: name.split(' ').map((part) => part[0]).join('').slice(0,2), subjects: subjects.map((subject) => subject.id) };
 });
 
 export function generateAttendance() {
